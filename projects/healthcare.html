@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Analytics Dashboard — Gulzhan Raiymbek</title>
+<meta name="description" content="Power BI + SQL healthcare analytics dashboard case study — coming soon.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="../index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="../index.html">Home</a>
+      <a href="../projects.html" class="active">Projects</a>
+      <a href="../about.html">About</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../certificates.html">Certificates</a>
+      <a href="../resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="case-hero">
+    <div class="container">
+      <a class="card-link" href="../projects.html">← All projects</a>
+      <div class="case-meta" style="margin-top:14px;">
+        <span class="tag domain-healthcare"><span class="tag-dot"></span>Healthcare</span>
+        <span class="tag status-soon">Case study coming soon</span>
+      </div>
+      <h1>Healthcare Analytics Dashboard</h1>
+      <p class="lead">Patient, admissions, and outcomes analysis, built in Power BI. Full write-up
+        and interactive version are on the way.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="placeholder-block">
+        <strong>This case study is being written.</strong>
+        <p style="margin: 10px 0 0;">
+          Once the dashboard and SQL are finalized, this page will follow the same format as the
+          <a class="card-link" href="supply-chain.html" style="display:inline;">Supply Chain case study</a>:
+          an embedded interactive dashboard, the data model, key DAX measures, findings, and downloadable
+          SQL + .pbix.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/projects-data.js"></script>
+<script src="../js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

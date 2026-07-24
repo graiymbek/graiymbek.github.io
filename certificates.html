@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificates — Gulzhan Raiymbek</title>
+<meta name="description" content="Certifications and credentials — Gulzhan Raiymbek, Data Analyst & Power BI Developer.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="certificates.html" class="active">Certificates</a>
+      <a href="resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section style="padding-bottom: 0;">
+    <div class="container">
+      <p class="eyebrow">Credentials</p>
+      <h1>Certificates</h1>
+      <p class="lead">Courses and certifications relevant to data analysis and Power BI development.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <!--
+        TODO: replace this placeholder grid with your real certificates.
+        Duplicate a .cert-card block for each one — title, issuer, date,
+        and a link to the credential/verification page if you have one.
+      -->
+      <div class="placeholder-block" style="margin-bottom: 24px;">
+        <strong>Add your certificates</strong>
+        <p style="margin:10px 0 0;">Replace the example cards below with your real certifications —
+          title, issuing organization, date earned, and a verify/credential link if available.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card" style="padding:20px;">
+          <div class="cert-card">
+            <div class="cert-icon">🏅</div>
+            <div>
+              <h3 style="margin-bottom:2px;">Certificate name</h3>
+              <p class="mt-0" style="font-size:13.5px;">Issuing organization · Month Year</p>
+              <a class="card-link" href="#" target="_blank" rel="noopener">View credential →</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding:20px;">
+          <div class="cert-card">
+            <div class="cert-icon">🏅</div>
+            <div>
+              <h3 style="margin-bottom:2px;">Certificate name</h3>
+              <p class="mt-0" style="font-size:13.5px;">Issuing organization · Month Year</p>
+              <a class="card-link" href="#" target="_blank" rel="noopener">View credential →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Gulzhan Raiymbek</title>
+<meta name="description" content="Power BI dashboard projects by Gulzhan Raiymbek, across finance, supply chain, and healthcare.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section style="padding-bottom: 0;">
+    <div class="container">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Dashboard projects</h1>
+      <p class="lead">Every project pairs a Power BI dashboard with a SQL data model. Filter by domain,
+        or open a case study for the data model, DAX measures, and key findings behind it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="finance">Finance</button>
+        <button class="filter-chip" data-filter="supply-chain">Supply Chain</button>
+        <button class="filter-chip" data-filter="healthcare">Healthcare</button>
+        <button class="filter-chip" data-filter="hr">HR</button>
+        <button class="filter-chip" data-filter="insurance">Insurance</button>
+      </div>
+      <div class="grid grid-3" id="all-projects"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  Portfolio.renderProjectGrid("all-projects", { pathPrefix: "" });
+  Portfolio.initFilterBar("filter-bar", "all-projects", "");
+</script>
+</body>
+</html>

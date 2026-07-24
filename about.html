@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Gulzhan Raiymbek</title>
+<meta name="description" content="About Gulzhan Raiymbek — Data Analyst & Power BI Developer, PhD in Biotechnology, former research scientist at the University of Michigan.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html" class="active">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 20px;">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">About me</p>
+        <h1>From the bench to the dashboard.</h1>
+        <p class="lead">
+          I'm a data analyst and Power BI developer with a PhD in Biotechnology and a background
+          as a research scientist at the University of Michigan. I spent years designing experiments,
+          scrutinizing data for what was real versus noise, and communicating findings to people who
+          needed to make decisions from them — that's the same job I do now, just with DAX instead
+          of a pipette.
+        </p>
+        <!-- TODO: expand this with 2-3 more sentences about what you're looking for / what drives you -->
+      </div>
+      <div class="hero-photo">
+        <!-- TODO: replace with a real headshot -->
+        Add your photo here<br>(assets/img/headshot.jpg)
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Background</p>
+      <h2 class="mt-0">Experience</h2>
+      <ul class="timeline">
+        <li>
+          <div class="tl-when"><!-- TODO: add real dates --> Dates here</div>
+          <h4>Data Analyst / Power BI Developer</h4>
+          <p><!-- TODO: replace with real role details, or remove if this is the role you're job-hunting for rather than currently in -->
+            Building Power BI dashboards and SQL data models across finance, supply chain, and
+            healthcare domains — see the <a class="card-link" href="projects.html" style="display:inline;">Projects</a> page.</p>
+        </li>
+        <li>
+          <div class="tl-when"><!-- TODO: add real dates --> Dates here</div>
+          <h4>Research Scientist Staff, University of Michigan</h4>
+          <p><!-- TODO: add 1-2 sentences on what you researched and what data/analysis skills it involved -->
+            Conducted biotechnology research, including experimental design, data collection, and
+            statistical analysis.</p>
+        </li>
+        <li>
+          <div class="tl-when"><!-- TODO: add real dates --> Dates here</div>
+          <h4>PhD, Biotechnology</h4>
+          <p><!-- TODO: add university name and 1 sentence on your dissertation focus -->
+            Doctoral research in biotechnology.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Toolkit</p>
+      <h2 class="mt-0">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-pill">Power BI <div class="bar"><span style="width:95%"></span></div></div>
+        <div class="skill-pill">DAX <div class="bar"><span style="width:90%"></span></div></div>
+        <div class="skill-pill">SQL <div class="bar"><span style="width:88%"></span></div></div>
+        <div class="skill-pill">Python / pandas <div class="bar"><span style="width:80%"></span></div></div>
+        <div class="skill-pill">Data modeling <div class="bar"><span style="width:88%"></span></div></div>
+        <div class="skill-pill">Excel <div class="bar"><span style="width:85%"></span></div></div>
+        <div class="skill-pill">Statistical analysis <div class="bar"><span style="width:90%"></span></div></div>
+        <div class="skill-pill">Data storytelling <div class="bar"><span style="width:85%"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card" style="padding: 32px; text-align:center;">
+        <h2 class="mt-0">Let's talk</h2>
+        <p style="max-width:60ch; margin:0 auto 18px;">Open to Data Analyst and Power BI Developer roles.</p>
+        <div class="btn-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="mailto:graiymbek@gmail.com">Email me</a>
+          <a class="btn btn-secondary" href="resume.html">Download résumé</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

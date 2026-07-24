@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gulzhan Raiymbek — Data Analyst &amp; Power BI Developer</title>
+<meta name="description" content="Portfolio of Gulzhan Raiymbek — Data Analyst & Power BI Developer, PhD in Biotechnology. Power BI dashboards across finance, supply chain, and healthcare.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="index.html" class="active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Data Analyst · Power BI Developer</p>
+        <h1>I turn messy data into dashboards people actually use.</h1>
+        <p class="lead">
+          PhD in Biotechnology and former research scientist at the University of Michigan,
+          now building Power BI dashboards and SQL-backed data models across finance,
+          supply chain, and healthcare. I like problems where the data model is as important
+          as the chart on top of it.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="projects.html">View my dashboards</a>
+          <a class="btn btn-secondary" href="resume.html">Download résumé</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <!-- TODO: replace with a real headshot, e.g. <img src="assets/img/headshot.jpg" alt="Gulzhan Raiymbek"> -->
+        Add your photo here<br>(assets/img/headshot.jpg)
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Featured work</p>
+          <h2 class="mt-0">Dashboards</h2>
+        </div>
+        <a class="card-link" href="projects.html">See all projects →</a>
+      </div>
+      <div class="grid grid-3" id="featured-projects"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Toolkit</p>
+      <h2 class="mt-0">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-pill">Power BI <div class="bar"><span style="width:95%"></span></div></div>
+        <div class="skill-pill">DAX <div class="bar"><span style="width:90%"></span></div></div>
+        <div class="skill-pill">SQL <div class="bar"><span style="width:88%"></span></div></div>
+        <div class="skill-pill">Python / pandas <div class="bar"><span style="width:80%"></span></div></div>
+        <div class="skill-pill">Data modeling <div class="bar"><span style="width:88%"></span></div></div>
+        <div class="skill-pill">Excel <div class="bar"><span style="width:85%"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card" style="padding: 32px; text-align:center;">
+        <p class="eyebrow" style="justify-content:center; display:flex;">Open to opportunities</p>
+        <h2 class="mt-0">Looking for a Data Analyst or Power BI Developer</h2>
+        <p style="max-width:60ch; margin:0 auto 18px;">
+          Currently job hunting — happy to walk through the data model or DAX behind any
+          dashboard here in an interview.
+        </p>
+        <div class="btn-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="resume.html">Get in touch</a>
+          <!-- TODO: replace # with your real LinkedIn URL -->
+          <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <!-- TODO: replace # with your real GitHub URL -->
+          <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <!-- TODO: replace # with your real LinkedIn/GitHub URLs -->
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  Portfolio.renderProjectGrid("featured-projects", { limit: 3, pathPrefix: "" });
+</script>
+</body>
+</html>

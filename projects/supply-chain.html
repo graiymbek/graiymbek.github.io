@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supply Chain Analytics — Gulzhan Raiymbek</title>
+<meta name="description" content="Power BI + SQL supply chain analytics case study: sales trends, shipping performance, and late-delivery risk across 180K+ orders.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="../index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="../index.html">Home</a>
+      <a href="../projects.html" class="active">Projects</a>
+      <a href="../about.html">About</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../certificates.html">Certificates</a>
+      <a href="../resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="case-hero">
+    <div class="container">
+      <a class="card-link" href="../projects.html">← All projects</a>
+      <div class="case-meta" style="margin-top:14px;">
+        <span class="tag domain-supply-chain"><span class="tag-dot"></span>Supply Chain</span>
+        <span class="tool-chip">Power BI</span>
+        <span class="tool-chip">DAX</span>
+        <span class="tool-chip">SQL</span>
+        <span class="tool-chip">Python / pandas</span>
+      </div>
+      <h1>Supply Chain Analytics</h1>
+      <p class="lead">An end-to-end order and fulfillment dashboard built on the DataCo Global Supply Chain
+        dataset (180,519 order line items, Jan 2015 – Jan 2018) — sales and profit trends, shipping
+        performance by mode, and where late-delivery risk actually comes from.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="../dashboards/supply-chain-dashboard.html" target="_blank" rel="noopener">Open full-screen dashboard ↗</a>
+        <!-- TODO: replace with your real GitHub repo link for this project -->
+        <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn btn-secondary" href="../assets/sql/supply_chain_queries.sql" download>Download SQL</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="case-embed">
+        <div class="embed-bar">
+          <span>Interactive dashboard — try the year filter and light/dark toggle</span>
+          <a href="../dashboards/supply-chain-dashboard.html" target="_blank" rel="noopener">Open in new tab ↗</a>
+        </div>
+        <iframe src="../dashboards/supply-chain-dashboard.html" title="Supply Chain Analytics interactive dashboard" loading="lazy"></iframe>
+      </div>
+
+      <div class="case-grid">
+        <div>
+          <h2>The problem</h2>
+          <p>DataCo's raw order data spans multiple markets, shipping modes, and product departments,
+            but on its own it doesn't answer the questions a supply chain or ops team actually asks:
+            which shipping modes are failing to hit their scheduled delivery window, which regions and
+            categories drive the most revenue, and how much of the fulfillment problem is a scheduling
+            issue versus a genuine delay.</p>
+
+          <h2>Data model</h2>
+          <p>Star schema with a central fact table (<code>vw_FactOrders</code>) at the order-line-item
+            grain, joined to <code>vw_DimProduct</code>, <code>vw_DimCustomer</code>, <code>vw_DimLocation</code>,
+            and a standard calendar table (<code>DimDate</code>) built with <code>CALENDAR()</code> and marked
+            as the model's date table. All trend and YTD/MoM/YoY measures use <code>TOTALYTD</code>,
+            <code>SAMEPERIODLASTYEAR</code>, and <code>PREVIOUSMONTH</code> against that table rather than
+            relying on auto date/time.</p>
+
+          <h2>Key findings</h2>
+          <ul class="insight-list">
+            <li><strong>First Class shipping has the worst late-delivery rate (~93%)</strong> despite being
+              the premium tier — the scheduled-day target for that mode looks unrealistic relative to
+              actual fulfillment time, not a delivery-speed problem specifically.</li>
+            <li><strong>Standard Class is the only mode that reliably hits its scheduled window</strong> —
+              actual and scheduled days are nearly identical, while every faster tier overruns.</li>
+            <li><strong>Just over half of orders (54.8%) are flagged at risk of late delivery</strong>,
+              concentrated in the faster shipping tiers rather than spread evenly.</li>
+            <li><strong>Europe and LATAM are the top two markets by sales</strong> — together they
+              generate more than Pacific Asia, USCA, and Africa combined, with Africa contributing
+              less than a quarter of Europe's total alone.</li>
+            <li><strong>56.98% of customers are repeat buyers</strong> (more than one order), against an
+              average of 3.18 orders per customer — a healthy retention signal for a sportswear-heavy
+              catalog.</li>
+          </ul>
+        </div>
+
+        <aside>
+          <div class="side-card">
+            <h4>Quick facts</h4>
+            <div class="side-row"><span>Rows analyzed</span><strong>180,519</strong></div>
+            <div class="side-row"><span>Time range</span><strong>Jan 2015 – Jan 2018</strong></div>
+            <div class="side-row"><span>Markets</span><strong>5</strong></div>
+            <div class="side-row"><span>Product categories</span><strong>50</strong></div>
+            <div class="side-row"><span>DAX measures</span><strong>25+</strong></div>
+          </div>
+          <div class="side-card">
+            <h4>Tools</h4>
+            <div class="card-tools">
+              <span class="tool-chip">Power BI Desktop</span>
+              <span class="tool-chip">DAX</span>
+              <span class="tool-chip">SQL</span>
+              <span class="tool-chip">Python (pandas)</span>
+              <span class="tool-chip">Chart.js</span>
+            </div>
+          </div>
+          <div class="side-card">
+            <h4>Links</h4>
+            <p style="margin-bottom:8px;"><a class="card-link" href="../dashboards/supply-chain-dashboard.html" target="_blank" rel="noopener">Live dashboard ↗</a></p>
+            <p style="margin-bottom:8px;"><a class="card-link" href="../assets/sql/supply_chain_queries.sql" download>SQL queries ↓</a></p>
+            <!-- TODO: swap in your real GitHub repo + downloadable .pbip/.pbix -->
+            <p style="margin-bottom:8px;"><a class="card-link" href="#" target="_blank" rel="noopener">GitHub repo ↗</a></p>
+            <p style="margin-bottom:0;"><a class="card-link" href="#">Download .pbix ↓</a></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>From the Power BI report</h2>
+      <p>The dashboard above is a web rebuild for easy browsing; the source-of-truth report was built
+        natively in Power BI Desktop with the DAX measures described above.</p>
+      <div class="grid grid-2">
+        <img src="../assets/img/supply-chain-shipping.png" alt="Shipping and Fulfillment report page in Power BI" style="border-radius:12px; border:1px solid var(--border);">
+        <img src="../assets/img/supply-chain-products.png" alt="Products and Customers report page in Power BI" style="border-radius:12px; border:1px solid var(--border);">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/projects-data.js"></script>
+<script src="../js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
