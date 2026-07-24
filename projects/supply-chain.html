@@ -41,7 +41,7 @@
         dataset (180,519 order line items, Jan 2015 – Jan 2018) — sales and profit trends, shipping
         performance by mode, and where late-delivery risk actually comes from.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="../dashboards/supply-chain-dashboard.html" target="_blank" rel="noopener">Open full-screen dashboard ↗</a>
+        <a class="btn btn-primary" href="../assets/downloads/supply-chain-analytics.pbix" download>Download .pbix ↓</a>
         <!-- TODO: replace with your real GitHub repo link for this project -->
         <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View on GitHub</a>
         <a class="btn btn-secondary" href="../assets/sql/supply_chain_queries.sql" download>Download SQL</a>
@@ -51,14 +51,6 @@
 
   <section>
     <div class="container">
-      <div class="case-embed">
-        <div class="embed-bar">
-          <span>Interactive dashboard — try the year filter and light/dark toggle</span>
-          <a href="../dashboards/supply-chain-dashboard.html" target="_blank" rel="noopener">Open in new tab ↗</a>
-        </div>
-        <iframe src="../dashboards/supply-chain-dashboard.html" title="Supply Chain Analytics interactive dashboard" loading="lazy"></iframe>
-      </div>
-
       <div class="case-grid">
         <div>
           <h2>The problem</h2>
@@ -110,16 +102,14 @@
               <span class="tool-chip">DAX</span>
               <span class="tool-chip">SQL</span>
               <span class="tool-chip">Python (pandas)</span>
-              <span class="tool-chip">Chart.js</span>
             </div>
           </div>
           <div class="side-card">
             <h4>Links</h4>
-            <p style="margin-bottom:8px;"><a class="card-link" href="../dashboards/supply-chain-dashboard.html" target="_blank" rel="noopener">Live dashboard ↗</a></p>
             <p style="margin-bottom:8px;"><a class="card-link" href="../assets/sql/supply_chain_queries.sql" download>SQL queries ↓</a></p>
-            <!-- TODO: swap in your real GitHub repo + downloadable .pbip/.pbix -->
+            <!-- TODO: swap in your real GitHub repo link -->
             <p style="margin-bottom:8px;"><a class="card-link" href="#" target="_blank" rel="noopener">GitHub repo ↗</a></p>
-            <p style="margin-bottom:0;"><a class="card-link" href="#">Download .pbix ↓</a></p>
+            <p style="margin-bottom:0;"><a class="card-link" href="../assets/downloads/supply-chain-analytics.pbix" download>Download .pbix ↓</a></p>
           </div>
         </aside>
       </div>
@@ -129,11 +119,19 @@
   <section>
     <div class="container">
       <h2>From the Power BI report</h2>
-      <p>The dashboard above is a web rebuild for easy browsing; the source-of-truth report was built
-        natively in Power BI Desktop with the DAX measures described above.</p>
-      <div class="grid grid-2">
-        <img src="../assets/img/supply-chain-shipping.png" alt="Shipping and Fulfillment report page in Power BI" style="border-radius:12px; border:1px solid var(--border);">
-        <img src="../assets/img/supply-chain-products.png" alt="Products and Customers report page in Power BI" style="border-radius:12px; border:1px solid var(--border);">
+      <p>Built natively in Power BI Desktop with the DAX measures described above — open the downloaded
+        .pbix file above to explore it live, or view screenshots of the report pages below.</p>
+      <!--
+        TODO: replace this placeholder with real screenshots of your Power BI report pages.
+        Suggested: export/screenshot the Executive Overview, Shipping & Fulfilment, and
+        Product & Customers pages, save them as assets/img/supply-chain-page1.png (etc.),
+        then swap this placeholder-block for a <div class="grid grid-2"> of <img> tags
+        (see certificates.html or the git history of this file for the pattern).
+      -->
+      <div class="placeholder-block">
+        <strong>Report page screenshots coming soon</strong>
+        <p style="margin:10px 0 0;">In the meantime, download the .pbix above and open it in Power BI
+          Desktop to see the full report.</p>
       </div>
     </div>
   </section>

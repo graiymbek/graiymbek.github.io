@@ -39,14 +39,20 @@ assets/sql/                 SQL reference queries per project
 ## Still needs your input (marked `TODO` in the code)
 
 - Real headshot photo (`assets/img/headshot.jpg`)
-- Résumé PDF (`assets/docs/resume.pdf`)
 - LinkedIn and GitHub URLs (currently `#` placeholders in every page's nav/footer/contact section)
-- Real certificates on `certificates.html`
-- Real dates and details in the `about.html` experience timeline
-- Finance and Healthcare case studies (`projects/finance.html`, `projects/healthcare.html`) —
-  currently placeholders; send over those dashboards/screenshots and I can build the full
-  case studies the same way as the Supply Chain one.
+- Supply Chain case study report-page screenshots (`projects/supply-chain.html` — the "From the
+  Power BI report" section currently shows a placeholder until real screenshots are added)
+- Finance and Healthcare case study write-ups (`projects/finance.html`, `projects/healthcare.html`)
+  — the real .pbix files are already wired up for download on both pages; still need the full
+  write-up (data model, DAX measures, findings, SQL) the same way as the Supply Chain one.
 - Per-project GitHub repo links (each case study page has a "View on GitHub" button pointing at `#`)
+
+## Already done
+
+- Résumé PDF (`assets/docs/resume.pdf`) — embedded and downloadable on `resume.html`
+- Real certificates on `certificates.html` (PL-300, plus DP-600 in progress)
+- Real dates and details in the `about.html` experience timeline and bio
+- Real `.pbix` downloads on the Supply Chain, Finance, and Healthcare project pages
 
 ## Deploying to GitHub Pages
 
