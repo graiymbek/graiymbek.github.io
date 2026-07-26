@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retail Sales Analytics — Gulzhan Raiymbek</title>
-<meta name="description" content="Power BI + SQL retail sales analytics case study — coming soon.">
+<meta name="description" content="Power BI + SQL retail sales analytics case study: revenue, profit, product, and customer performance across the AdventureWorks dataset.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -31,26 +31,116 @@
       <a class="card-link" href="../projects.html">← All projects</a>
       <div class="case-meta" style="margin-top:14px;">
         <span class="tag domain-retail"><span class="tag-dot"></span>Retail</span>
-        <span class="tag status-soon">Case study coming soon</span>
+        <span class="tool-chip">Power BI</span>
+        <span class="tool-chip">DAX</span>
+        <span class="tool-chip">SQL</span>
       </div>
       <h1>Retail Sales Analytics</h1>
-      <p class="lead">Revenue, profit, and customer/product performance analysis, built in Power BI.
-        Full write-up and screenshots are on the way.</p>
+      <p class="lead">A revenue, profit, and customer/product performance dashboard for a bike and
+        cycling-gear retailer (AdventureWorks) — $24.9M in revenue and 25.2K orders analyzed across
+        four report pages, from company-wide trends down to individual products, customers, and
+        markets.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/retail_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="placeholder-block">
-        <strong>This case study is being written.</strong>
-        <p style="margin: 10px 0 0;">
-          Once the write-up is finalized, this page will follow the same format as the
-          <a class="card-link" href="supply-chain.html" style="display:inline;">Supply Chain</a> and
-          <a class="card-link" href="healthcare.html" style="display:inline;">Healthcare</a> case
-          studies: the data model, key DAX measures, findings, report screenshots, and a link to
-          the SQL on GitHub.
-        </p>
+      <div class="case-grid">
+        <div>
+          <h2>The problem</h2>
+          <p>Raw order and return data across products, customers, and territories doesn't tell
+            you where the business actually stands: is revenue trending up or down against target,
+            which product categories and specific SKUs are worth the shelf space, which customer
+            segments are the most valuable, and where return rates are eating into margin.</p>
+
+          <h2>Data model</h2>
+          <p>This one's an older project — built a few years ago while working through a Power BI
+            course (Maven Analytics, via Udemy), so unlike Supply Chain this wasn't a schema I
+            designed myself, and unlike Healthcare I don't know the original source of the data.
+            Eight real tables back the report: a <code>Sales Data</code> fact table (grain: one row
+            per order line) joined out to <code>Customer Lookup</code>, <code>Product Lookup</code>
+            (itself split into <code>Product Subcategories Lookup</code> and
+            <code>Categories Lookup</code>), <code>Territory Lookup</code>, and
+            <code>Calendar Lookup</code>, plus a separate <code>Returns Data</code> table. A few
+            other tables in the file are course-demo scaffolding rather than real analytical data —
+            a dynamic metric-switcher and a What-if pricing-adjustment parameter — and aren't part
+            of the SQL below.</p>
+
+          <h2>Key findings</h2>
+          <ul class="insight-list">
+            <li><strong>Revenue has been climbing steadily since mid-2021</strong>, more than doubling
+              from its 2020–2021 low, with the most recent month ($1.83M) up 3.31% over the prior
+              month — orders, on the other hand, dipped slightly (2.15K, -0.88%), suggesting average
+              order value is what's driving the growth, not order volume.</li>
+            <li><strong>Accessories outsell Bikes on order count</strong> (17.0K vs. 13.9K orders),
+              even though bikes are the higher-ticket item — a reminder that unit economics and
+              order volume tell different stories about the same category mix.</li>
+            <li><strong>Helmets carry a disproportionate share of returns</strong> — the three
+              best-selling Sport-100 helmet variants all show return rates of 2.7–3.3%, well above
+              most other top-10 products, and "Shorts" is the single most-returned product type
+              overall.</li>
+            <li><strong>Return rate sits at 2.2% company-wide</strong>, and monthly returns (166,
+              -1.78% vs. prior month) are trending down slightly even as order volume also dipped —
+              a mildly positive signal on product-fit or quality.</li>
+            <li><strong>The customer base is concentrated in five markets</strong> — United States,
+              Canada, Germany, France, and the United Kingdom, plus Australia — with 17.4K unique
+              customers averaging $1,431 in revenue per customer.</li>
+          </ul>
+        </div>
+
+        <aside>
+          <div class="side-card">
+            <h4>Quick facts</h4>
+            <div class="side-row"><span>Revenue</span><strong>$24.9M</strong></div>
+            <div class="side-row"><span>Profit</span><strong>$10.5M</strong></div>
+            <div class="side-row"><span>Orders</span><strong>25.2K</strong></div>
+            <div class="side-row"><span>Return rate</span><strong>2.2%</strong></div>
+            <div class="side-row"><span>Unique customers</span><strong>17.4K</strong></div>
+          </div>
+          <div class="side-card">
+            <h4>Tools</h4>
+            <div class="card-tools">
+              <span class="tool-chip">Power BI Desktop</span>
+              <span class="tool-chip">DAX</span>
+              <span class="tool-chip">SQL</span>
+            </div>
+          </div>
+          <div class="side-card">
+            <h4>Links</h4>
+            <p style="margin-bottom:0;"><a class="card-link" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/retail_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a></p>
+          </div>
+        </aside>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>From the Power BI report</h2>
+      <p>Built natively in Power BI Desktop with the DAX measures described above — four report pages,
+        shown below.</p>
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/retail-exec-dashboard.png" alt="Exec Dashboard report page — company-wide revenue, profit, orders, and return rate" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Exec Dashboard — company-wide revenue, profit, orders, and return rate</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/retail-product-detail.png" alt="Product Detail report page — per-product orders, revenue, and profit against monthly targets" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Product Detail — per-product orders, revenue, and profit against monthly targets</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/retail-customer-detail.png" alt="Customer Detail report page — customer counts, revenue per customer, income level, and occupation" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Customer Detail — customer counts, revenue per customer, income level, and occupation</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/retail-map.png" alt="Map report page — customer geographic footprint across North America, Europe, and the Pacific" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Map — customer geographic footprint across North America, Europe, and the Pacific</figcaption>
+      </figure>
     </div>
   </section>
 </main>
