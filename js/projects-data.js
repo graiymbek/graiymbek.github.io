@@ -53,14 +53,12 @@ const PROJECTS = [
     caseStudy: "projects/healthcare.html",
     dashboard: null,
   },
-
-  /* Add HR and Insurance Claims here once you start them, e.g.:
   {
     slug: "hr-analytics",
     title: "HR Analytics Dashboard",
     domain: "hr",
     domainLabel: "HR",
-    summary: "...",
+    summary: "Workforce analytics dashboard covering headcount, turnover, and hiring metrics — currently in progress.",
     tools: ["Power BI", "DAX", "SQL"],
     thumb: "../assets/img/hr-thumb.png",
     thumbFromRoot: "assets/img/hr-thumb.png",
@@ -68,7 +66,19 @@ const PROJECTS = [
     caseStudy: "projects/hr-analytics.html",
     dashboard: null,
   },
-  */
+  {
+    slug: "insurance-claims",
+    title: "Insurance Claims Analytics",
+    domain: "insurance",
+    domainLabel: "Insurance",
+    summary: "Claims and policy performance analytics dashboard — currently in progress.",
+    tools: ["Power BI", "DAX", "SQL"],
+    thumb: "../assets/img/insurance-thumb.png",
+    thumbFromRoot: "assets/img/insurance-thumb.png",
+    status: "soon",
+    caseStudy: "projects/insurance-claims.html",
+    dashboard: null,
+  },
 ];
 
 const DOMAIN_LABELS = {
