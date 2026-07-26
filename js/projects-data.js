@@ -28,17 +28,19 @@ const PROJECTS = [
     dashboard: "dashboards/supply-chain-dashboard.html",
   },
   {
-    slug: "finance",
-    title: "Finance Performance Dashboard",
-    domain: "finance",
-    domainLabel: "Finance",
-    summary: "Revenue, margin, and budget-vs-actual tracking dashboard built in Power BI.",
+   {
+    slug: "retail",
+    title: "Retail Sales Analytics",
+    domain: "retail",
+    domainLabel: "Retail",
+    summary: "Revenue, profit, and customer/product performance analysis dashboard built in Power BI.",
     tools: ["Power BI", "DAX", "SQL"],
-    thumb: "../assets/img/finance-thumb.png",
-    thumbFromRoot: "assets/img/finance-thumb.png",
-    status: "soon",
-    caseStudy: "projects/finance.html",
+    thumb: "../assets/img/retail-thumb.png",
+    thumbFromRoot: "assets/img/retail-thumb.png",
+    status: "live",
+    caseStudy: "projects/retail.html",
     dashboard: null,
+  },
   },
   {
     slug: "healthcare",
@@ -72,7 +74,7 @@ const PROJECTS = [
 ];
 
 const DOMAIN_LABELS = {
-  "finance": "Finance",
+  "retail": "Retail",
   "supply-chain": "Supply Chain",
   "healthcare": "Healthcare",
   "hr": "HR",
