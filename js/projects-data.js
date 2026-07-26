@@ -32,7 +32,7 @@ const PROJECTS = [
     title: "Retail Sales Analytics",
     domain: "retail",
     domainLabel: "Retail",
-    summary: "Revenue, profit, and customer/product performance analysis dashboard built in Power BI.",
+    summary: "Revenue, profit, and customer/product performance analysis across $24.9M in sales and 25K+ orders.",
     tools: ["Power BI", "DAX", "SQL"],
     thumb: "../assets/img/retail-thumb.png",
     thumbFromRoot: "assets/img/retail-thumb.png",
@@ -40,7 +40,7 @@ const PROJECTS = [
     caseStudy: "projects/retail.html",
     dashboard: null,
   },
-  },
+  {
     slug: "healthcare",
     title: "Healthcare Analytics Dashboard",
     domain: "healthcare",
