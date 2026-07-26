@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
 <header class="site-header">
   <nav class="nav">
     <a class="nav-brand" href="../index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
@@ -24,7 +23,6 @@
     </div>
   </nav>
 </header>
-
 <main>
   <section class="case-hero">
     <div class="container">
@@ -48,7 +46,6 @@
       </div>
     </div>
   </section>
-
   <section>
     <div class="container">
       <div class="case-grid">
@@ -59,7 +56,6 @@
             which shipping modes are failing to hit their scheduled delivery window, which regions and
             categories drive the most revenue, and how much of the fulfillment problem is a scheduling
             issue versus a genuine delay.</p>
-
           <h2>Data model</h2>
           <p>Star schema with a central fact table (<code>vw_FactOrders</code>) at the order-line-item
             grain, joined to <code>vw_DimProduct</code>, <code>vw_DimCustomer</code>, <code>vw_DimLocation</code>,
@@ -67,7 +63,6 @@
             as the model's date table. All trend and YTD/MoM/YoY measures use <code>TOTALYTD</code>,
             <code>SAMEPERIODLASTYEAR</code>, and <code>PREVIOUSMONTH</code> against that table rather than
             relying on auto date/time.</p>
-
           <h2>Key findings</h2>
           <ul class="insight-list">
             <li><strong>First Class shipping has the worst late-delivery rate (~93%)</strong> despite being
@@ -85,7 +80,6 @@
               catalog.</li>
           </ul>
         </div>
-
         <aside>
           <div class="side-card">
             <h4>Quick facts</h4>
@@ -115,28 +109,29 @@
       </div>
     </div>
   </section>
-
   <section>
     <div class="container">
       <h2>From the Power BI report</h2>
       <p>Built natively in Power BI Desktop with the DAX measures described above — open the downloaded
         .pbix file above to explore it live, or view screenshots of the report pages below.</p>
-      <!--
-        TODO: replace this placeholder with real screenshots of your Power BI report pages.
-        Suggested: export/screenshot the Executive Overview, Shipping & Fulfilment, and
-        Product & Customers pages, save them as assets/img/supply-chain-page1.png (etc.),
-        then swap this placeholder-block for a <div class="grid grid-2"> of <img> tags
-        (see certificates.html or the git history of this file for the pattern).
-      -->
-      <div class="placeholder-block">
-        <strong>Report page screenshots coming soon</strong>
-        <p style="margin:10px 0 0;">In the meantime, download the .pbix above and open it in Power BI
-          Desktop to see the full report.</p>
-      </div>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/supply-chain-executive-overview.png" alt="Executive Overview report page — company-wide sales, profit, and performance summary" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Executive Overview — company-wide sales, profit, and performance summary</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/supply-chain-shipping-fulfillment.png" alt="Shipping and Fulfilment report page — delivery efficiency, shipping performance, and order fulfillment metrics" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Shipping and Fulfilment — delivery efficiency, shipping performance, and order fulfillment metrics</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/supply-chain-products-customers.png" alt="Product and Customers report page — customer behavior, product performance, and sales insights" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Product and Customers — customer behavior, product performance, and sales insights</figcaption>
+      </figure>
     </div>
   </section>
 </main>
-
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
@@ -147,7 +142,6 @@
     </div>
   </div>
 </footer>
-
 <script src="../js/projects-data.js"></script>
 <script src="../js/main.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
