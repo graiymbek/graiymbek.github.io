@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
 <header class="site-header">
   <nav class="nav">
     <a class="nav-brand" href="../index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
@@ -23,6 +24,7 @@
     </div>
   </nav>
 </header>
+
 <main>
   <section class="case-hero">
     <div class="container">
@@ -39,11 +41,12 @@
         dataset (180,519 order line items, Jan 2015 – Jan 2018) — sales and profit trends, shipping
         performance by mode, and where late-delivery risk actually comes from.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="../assets/downloads/supply-chain-analytics.pbix" download>Download .pbix ↓</a>
-        <a class="btn btn-secondary" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/supply_chain_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a>
+        <a class="btn btn-primary" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/supply_chain_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a>
+        <a class="btn btn-secondary" href="../assets/sql/supply_chain_queries.sql" download>Download SQL</a>
       </div>
     </div>
   </section>
+
   <section>
     <div class="container">
       <div class="case-grid">
@@ -54,6 +57,7 @@
             which shipping modes are failing to hit their scheduled delivery window, which regions and
             categories drive the most revenue, and how much of the fulfillment problem is a scheduling
             issue versus a genuine delay.</p>
+
           <h2>Data model</h2>
           <p>Star schema with a central fact table (<code>vw_FactOrders</code>) at the order-line-item
             grain, joined to <code>vw_DimProduct</code>, <code>vw_DimCustomer</code>, <code>vw_DimLocation</code>,
@@ -61,6 +65,7 @@
             as the model's date table. All trend and YTD/MoM/YoY measures use <code>TOTALYTD</code>,
             <code>SAMEPERIODLASTYEAR</code>, and <code>PREVIOUSMONTH</code> against that table rather than
             relying on auto date/time.</p>
+
           <h2>Key findings</h2>
           <ul class="insight-list">
             <li><strong>First Class shipping has the worst late-delivery rate (~93%)</strong> despite being
@@ -78,6 +83,7 @@
               catalog.</li>
           </ul>
         </div>
+
         <aside>
           <div class="side-card">
             <h4>Quick facts</h4>
@@ -99,20 +105,18 @@
           <div class="side-card">
             <h4>Links</h4>
             <p style="margin-bottom:8px;"><a class="card-link" href="../assets/sql/supply_chain_queries.sql" download>SQL queries ↓</a></p>
-            <!-- TODO: swap in your real GitHub repo link -->
-            <p style="margin-bottom:8px;"><a class="card-link" href="#" target="_blank" rel="noopener">GitHub repo ↗</a></p>
-            <p style="margin-bottom:0;"><a class="card-link" href="../assets/downloads/supply-chain-analytics.pbix" download>Download .pbix ↓</a></p>
+            <p style="margin-bottom:0;"><a class="card-link" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/supply_chain_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a></p>
           </div>
         </aside>
       </div>
     </div>
   </section>
+
   <section>
     <div class="container">
       <h2>From the Power BI report</h2>
-      <p>Built natively in Power BI Desktop with the DAX measures described above — open the downloaded
-        .pbix file above to explore it live, or view screenshots of the report pages below.</p>
-
+      <p>Built natively in Power BI Desktop with the DAX measures described above — three report pages,
+        shown below.</p>
       <figure style="margin:24px 0 0;">
         <img src="../assets/img/supply-chain-executive-overview.png" alt="Executive Overview report page — company-wide sales, profit, and performance summary" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
         <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Executive Overview — company-wide sales, profit, and performance summary</figcaption>
@@ -130,6 +134,7 @@
     </div>
   </section>
 </main>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
@@ -140,6 +145,7 @@
     </div>
   </div>
 </footer>
+
 <script src="../js/projects-data.js"></script>
 <script src="../js/main.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
