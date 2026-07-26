@@ -28,7 +28,6 @@ const PROJECTS = [
     dashboard: "dashboards/supply-chain-dashboard.html",
   },
   {
-   {
     slug: "retail",
     title: "Retail Sales Analytics",
     domain: "retail",
@@ -42,7 +41,6 @@ const PROJECTS = [
     dashboard: null,
   },
   },
-  {
     slug: "healthcare",
     title: "Healthcare Analytics Dashboard",
     domain: "healthcare",
