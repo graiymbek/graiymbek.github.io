@@ -62,7 +62,7 @@ const PROJECTS = [
     tools: ["Power BI", "DAX", "SQL"],
     thumb: "../assets/img/hr-thumb.png",
     thumbFromRoot: "assets/img/hr-thumb.png",
-    status: "soon",
+    status: "live",
     caseStudy: "projects/hr-analytics.html",
     dashboard: null,
   },
