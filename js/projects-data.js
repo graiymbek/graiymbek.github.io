@@ -75,7 +75,7 @@ const PROJECTS = [
     tools: ["Power BI", "DAX", "SQL"],
     thumb: "../assets/img/insurance-thumb.png",
     thumbFromRoot: "assets/img/insurance-thumb.png",
-    status: "soon",
+    status: "live",
     caseStudy: "projects/insurance-claims.html",
     dashboard: null,
   },
