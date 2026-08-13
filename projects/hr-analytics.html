@@ -1,41 +1,157 @@
-Gulzhan Raiymbek ☰
-Home Projects About Resume Certificates Contact ◐
-← All projects
-HR Power BI DAX
-HR Analytics and People Insights
-A workforce, recruitment, performance, and compliance analytics dashboard covering 505 active employees across multiple client organizations — four report pages, from executive-level headcount and turnover down to individual requisitions and compliance items.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Analytics and People Insights — Gulzhan Raiymbek</title>
+<meta name="description" content="Power BI HR analytics case study: workforce, recruitment, performance, engagement, and compliance dashboards across multiple client organizations.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
-SQL data model — coming soon
-The problem
-This dashboard was built for an HR services model that manages workforce data across several client companies at once (Horizon Retail Group, Lakeside Community Bank, Summit Digital Solutions, NorthStar Engineering, BrightPath Health Services, GreenLeaf Manufacturing, and others) — every page filters by Client as well as department and year. The goal was to give HR leadership one place to answer four different questions: is headcount healthy and who's leaving, is the recruiting pipeline actually converting, is performance and morale trending the right direction, and where is compliance risk concentrated.
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="../index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="../index.html">Home</a>
+      <a href="../projects.html" class="active">Projects</a>
+      <a href="../about.html">About</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../certificates.html">Certificates</a>
+      <a href="../resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
 
-Data model
-Built in Power BI Desktop with DAX measures across four report pages (Executive Workforce Overview, Recruitment Analytics, Performance & Engagement, and People Risk & Compliance). The SQL semantic model behind it is still in progress — check back soon for the full schema and queries.
+<main>
+  <section class="case-hero">
+    <div class="container">
+      <a class="card-link" href="../projects.html">← All projects</a>
+      <div class="case-meta" style="margin-top:14px;">
+        <span class="tag domain-hr"><span class="tag-dot"></span>HR</span>
+        <span class="tool-chip">Power BI</span>
+        <span class="tool-chip">DAX</span>
+      </div>
+      <h1>HR Analytics and People Insights</h1>
+      <p class="lead">A workforce, recruitment, performance, and compliance analytics dashboard covering
+        505 active employees across multiple client organizations — four report pages, from
+        executive-level headcount and turnover down to individual requisitions and compliance items.</p>
+      <div class="btn-row">
+        <span class="tool-chip" style="opacity:0.75;">SQL data model — coming soon</span>
+      </div>
+    </div>
+  </section>
 
-Key findings
-Headcount is growing but retention is a real problem underneath it — active headcount climbed from roughly 350 to 505 over the period (600 new hires), but the overall turnover rate sits at 21.86%, and Research & Development has the highest departmental turnover of any team — an expensive place to be losing people.
-Engagement is trending down even though performance looks fine on paper — 92.8% average goal achievement and a 3.6 average performance rating sound healthy, but the engagement trend line has been sliding for a year (from ~3.15 to ~2.85), and the eNPS sits at -46, with 63% of survey respondents landing as Detractors versus just 18% Promoters. A classic case where the numbers that are easy to hit (goals) and the number that predicts attrition (sentiment) are moving in opposite directions.
-The recruiting funnel leaks hard, and a chunk of open requisitions are stale — of 17,964 applicants, only 565 end in an accepted offer (3.1% overall conversion), average time to fill is 42 days, and several open requisitions — mostly Compliance roles — have been open for 900+ days, well past what "42 days average" would suggest is normal.
-Compliance risk is concentrated in a handful of clients, not spread evenly — 78 high-risk outstanding compliance items and 220 overdue trainings exist company-wide, but GreenLeaf Manufacturing and Summit Digital Solutions carry noticeably more high-risk items than the other client accounts, which is exactly the kind of thing an account team would want surfaced rather than buried in an aggregate number.
-Absenteeism is noisy but stable — the absenteeism rate bounces between about 3.2% and 3.8% month to month with no clear upward or downward trend, averaging 3.46% over the period.
-Quick facts
-Active headcount505
-Turnover rate21.86%
-eNPS-46
-Offer acceptance rate53.5%
-Compliance completion87.7%
-Tools
-Power BI Desktop DAX
-From the Power BI report
-Built natively in Power BI Desktop with the DAX measures described above — four report pages, shown below.
+  <section>
+    <div class="container">
+      <div class="case-grid">
+        <div>
+          <h2>The problem</h2>
+          <p>This dashboard was built for an HR services model that manages workforce data across several
+            client companies at once (Horizon Retail Group, Lakeside Community Bank, Summit Digital
+            Solutions, NorthStar Engineering, BrightPath Health Services, GreenLeaf Manufacturing, and
+            others) — every page filters by <code>Client</code> as well as department and year. The goal
+            was to give HR leadership one place to answer four different questions: is headcount healthy
+            and who's leaving, is the recruiting pipeline actually converting, is performance and morale
+            trending the right direction, and where is compliance risk concentrated.</p>
 
-Executive Workforce Overview report page — headcount, hires vs. terminations, and turnover by department
-Executive Workforce Overview — headcount, hires vs. terminations, and turnover by department
-Recruitment Analytics report page — funnel, open requisitions, time to fill, and recruitment activity trend
-Recruitment Analytics — funnel, open requisitions, time to fill, and recruitment activity trend
-Performance and Engagement report page — performance ratings, engagement trend, and sentiment distribution
-Performance & Engagement — performance ratings, engagement trend, and sentiment distribution
-People Risk and Compliance report page — absenteeism, training status, and high-risk compliance items by client
-People Risk & Compliance — absenteeism, training status, and high-risk compliance items by client
-© 2026 Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.
-Email LinkedIn GitHub
+          <h2>Data model</h2>
+          <p>Built in Power BI Desktop with DAX measures across four report pages (Executive Workforce
+            Overview, Recruitment Analytics, Performance &amp; Engagement, and People Risk &amp;
+            Compliance). The SQL semantic model behind it is still in progress — check back soon for the
+            full schema and queries.</p>
+
+          <h2>Key findings</h2>
+          <ul class="insight-list">
+            <li><strong>Headcount is growing but retention is a real problem underneath it</strong> —
+              active headcount climbed from roughly 350 to 505 over the period (600 new hires), but the
+              overall turnover rate sits at 21.86%, and Research &amp; Development has the highest
+              departmental turnover of any team — an expensive place to be losing people.</li>
+            <li><strong>Engagement is trending down even though performance looks fine on paper</strong> —
+              92.8% average goal achievement and a 3.6 average performance rating sound healthy, but the
+              engagement trend line has been sliding for a year (from ~3.15 to ~2.85), and the eNPS sits
+              at -46, with 63% of survey respondents landing as Detractors versus just 18% Promoters. A
+              classic case where the numbers that are easy to hit (goals) and the number that predicts
+              attrition (sentiment) are moving in opposite directions.</li>
+            <li><strong>The recruiting funnel leaks hard, and a chunk of open requisitions are stale</strong> —
+              of 17,964 applicants, only 565 end in an accepted offer (3.1% overall conversion), average
+              time to fill is 42 days, and several open requisitions — mostly Compliance roles — have been
+              open for 900+ days, well past what "42 days average" would suggest is normal.</li>
+            <li><strong>Compliance risk is concentrated in a handful of clients, not spread evenly</strong> —
+              78 high-risk outstanding compliance items and 220 overdue trainings exist company-wide, but
+              GreenLeaf Manufacturing and Summit Digital Solutions carry noticeably more high-risk items
+              than the other client accounts, which is exactly the kind of thing an account team would
+              want surfaced rather than buried in an aggregate number.</li>
+            <li><strong>Absenteeism is noisy but stable</strong> — the absenteeism rate bounces between
+              about 3.2% and 3.8% month to month with no clear upward or downward trend, averaging 3.46%
+              over the period.</li>
+          </ul>
+        </div>
+
+        <aside>
+          <div class="side-card">
+            <h4>Quick facts</h4>
+            <div class="side-row"><span>Active headcount</span><strong>505</strong></div>
+            <div class="side-row"><span>Turnover rate</span><strong>21.86%</strong></div>
+            <div class="side-row"><span>eNPS</span><strong>-46</strong></div>
+            <div class="side-row"><span>Offer acceptance rate</span><strong>53.5%</strong></div>
+            <div class="side-row"><span>Compliance completion</span><strong>87.7%</strong></div>
+          </div>
+          <div class="side-card">
+            <h4>Tools</h4>
+            <div class="card-tools">
+              <span class="tool-chip">Power BI Desktop</span>
+              <span class="tool-chip">DAX</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>From the Power BI report</h2>
+      <p>Built natively in Power BI Desktop with the DAX measures described above — four report pages,
+        shown below.</p>
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/hr-executive-overview.png" alt="Executive Workforce Overview report page — headcount, hires vs. terminations, and turnover by department" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Executive Workforce Overview — headcount, hires vs. terminations, and turnover by department</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/hr-recruitment-analytics.png" alt="Recruitment Analytics report page — funnel, open requisitions, time to fill, and recruitment activity trend" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Recruitment Analytics — funnel, open requisitions, time to fill, and recruitment activity trend</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/hr-performance-engagement.png" alt="Performance and Engagement report page — performance ratings, engagement trend, and sentiment distribution" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Performance &amp; Engagement — performance ratings, engagement trend, and sentiment distribution</figcaption>
+      </figure>
+
+      <figure style="margin:24px 0 0;">
+        <img src="../assets/img/hr-people-risk-compliance.png" alt="People Risk and Compliance report page — absenteeism, training status, and high-risk compliance items by client" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">People Risk &amp; Compliance — absenteeism, training status, and high-risk compliance items by client</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/gulzhan-raiymbek-b4a547b6/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/graiymbek" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/projects-data.js"></script>
+<script src="../js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
