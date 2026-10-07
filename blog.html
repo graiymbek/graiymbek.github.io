@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Gulzhan Raiymbek</title>
-<meta name="description" content="Power BI dashboard projects by Gulzhan Raiymbek, across finance, supply chain, and healthcare.">
+<title>Blog — Gulzhan Raiymbek</title>
+<meta name="description" content="Writing from Gulzhan Raiymbek on the career path into data analytics, lessons learned, certifications, and advice for people starting out.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
     <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
     <div class="nav-links" data-nav-links>
       <a href="index.html">Home</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="blog.html">Blog</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html" class="active">Blog</a>
       <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
       <a href="certificates.html">Certificates</a>
@@ -29,10 +29,11 @@
 <main>
   <section style="padding-bottom: 0;">
     <div class="container">
-      <p class="eyebrow">Portfolio</p>
-      <h1>Dashboard projects</h1>
-      <p class="lead">Every project pairs a Power BI dashboard with a SQL data model. Filter by domain,
-        or open a case study for the data model, DAX measures, and key findings behind it.</p>
+      <p class="eyebrow">Writing</p>
+      <h1>Blog</h1>
+      <p class="lead">Notes on my path into data analytics — career moves, certifications, lessons from
+        real projects, and the odd strong opinion about SQL vs. DAX. Written for anyone making (or
+        considering) the same jump.</p>
     </div>
   </section>
 
@@ -40,13 +41,12 @@
     <div class="container">
       <div class="filter-bar" id="filter-bar">
         <button class="filter-chip active" data-filter="all">All</button>
-        <button class="filter-chip" data-filter="finance">Finance</button>
-        <button class="filter-chip" data-filter="supply-chain">Supply Chain</button>
-        <button class="filter-chip" data-filter="healthcare">Healthcare</button>
-        <button class="filter-chip" data-filter="hr">HR</button>
-        <button class="filter-chip" data-filter="insurance">Insurance</button>
+        <button class="filter-chip" data-filter="career">Career Journey</button>
+        <button class="filter-chip" data-filter="tools">Tools &amp; Tutorials</button>
+        <button class="filter-chip" data-filter="projects">Project Deep-Dives</button>
+        <button class="filter-chip" data-filter="industry">Industry Trends</button>
       </div>
-      <div class="grid grid-3" id="all-projects"></div>
+      <div class="grid grid-3" id="all-posts"></div>
     </div>
   </section>
 </main>
@@ -62,12 +62,13 @@
   </div>
 </footer>
 
+<script src="js/blog-data.js"></script>
 <script src="js/projects-data.js"></script>
 <script src="js/main.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-  Portfolio.renderProjectGrid("all-projects", { pathPrefix: "" });
-  Portfolio.initFilterBar("filter-bar", "all-projects", "");
+  Portfolio.renderPostGrid("all-posts", { pathPrefix: "" });
+  Portfolio.initPostFilterBar("filter-bar", "all-posts", "");
 </script>
 </body>
 </html>

@@ -145,7 +145,102 @@
     });
   }
 
-  window.Portfolio = { renderProjectGrid, initFilterBar };
+  /* ---------- Blog post card rendering ---------- */
+  function topicTag(post) {
+    const span = document.createElement("span");
+    span.className = "tag topic-" + post.topic;
+    const dot = document.createElement("span");
+    dot.className = "tag-dot";
+    span.appendChild(dot);
+    span.appendChild(document.createTextNode(post.topicLabel));
+    return span;
+  }
+
+  function buildPostCard(post, opts) {
+    opts = opts || {};
+    const pathPrefix = opts.pathPrefix || "";
+
+    const card = document.createElement("article");
+    card.className = "card";
+    card.dataset.topic = post.topic;
+
+    const thumbWrap = document.createElement("div");
+    thumbWrap.className = "card-thumb";
+    const img = document.createElement("img");
+    img.src = pathPrefix + post.cover;
+    img.alt = post.title;
+    img.loading = "lazy";
+    img.onerror = function () {
+      thumbWrap.innerHTML = "";
+      const ph = document.createElement("div");
+      ph.className = "placeholder";
+      ph.textContent = post.title;
+      thumbWrap.appendChild(ph);
+    };
+    thumbWrap.appendChild(img);
+    card.appendChild(thumbWrap);
+
+    const body = document.createElement("div");
+    body.className = "card-body";
+
+    const tagsRow = document.createElement("div");
+    tagsRow.className = "card-tags";
+    tagsRow.appendChild(topicTag(post));
+    body.appendChild(tagsRow);
+
+    const h3 = document.createElement("h3");
+    h3.textContent = post.title;
+    body.appendChild(h3);
+
+    const p = document.createElement("p");
+    p.textContent = post.excerpt;
+    body.appendChild(p);
+
+    const meta = document.createElement("div");
+    meta.className = "post-meta";
+    meta.innerHTML = '<span>' + post.dateLabel + '</span><span class="dot-sep"></span><span>' + post.readTime + '</span>';
+    body.appendChild(meta);
+
+    const link = document.createElement("a");
+    link.className = "card-link";
+    link.href = pathPrefix + post.url;
+    link.textContent = "Read post →";
+    body.appendChild(link);
+
+    card.appendChild(body);
+    return card;
+  }
+
+  function renderPostGrid(containerId, opts) {
+    const container = document.getElementById(containerId);
+    if (!container || typeof POSTS === "undefined") return;
+    opts = opts || {};
+    let list = POSTS.slice();
+    if (opts.topic && opts.topic !== "all") list = list.filter((p) => p.topic === opts.topic);
+    if (opts.limit) list = list.slice(0, opts.limit);
+    container.innerHTML = "";
+    list.forEach((p) => container.appendChild(buildPostCard(p, { pathPrefix: opts.pathPrefix })));
+    if (list.length === 0) {
+      const empty = document.createElement("p");
+      empty.className = "muted";
+      empty.textContent = "No posts in this topic yet.";
+      container.appendChild(empty);
+    }
+  }
+
+  function initPostFilterBar(containerId, gridId, pathPrefix) {
+    const bar = document.getElementById(containerId);
+    if (!bar) return;
+    bar.addEventListener("click", (e) => {
+      const chip = e.target.closest("[data-filter]");
+      if (!chip) return;
+      bar.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderPostGrid(gridId, { topic: chip.dataset.filter, pathPrefix: pathPrefix });
+    });
+  }
+
+  window.Portfolio = { renderProjectGrid, initFilterBar, renderPostGrid, initPostFilterBar };
 
   document.addEventListener("DOMContentLoaded", function () {
     initTheme();

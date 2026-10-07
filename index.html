@@ -16,6 +16,7 @@
     <div class="nav-links" data-nav-links>
       <a href="index.html" class="active">Home</a>
       <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
       <a href="certificates.html">Certificates</a>
@@ -80,6 +81,19 @@
 
   <section>
     <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Writing</p>
+          <h2 class="mt-0">From the blog</h2>
+        </div>
+        <a class="card-link" href="blog.html">See all posts →</a>
+      </div>
+      <div class="grid grid-3" id="featured-posts"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
       <div class="card" style="padding: 32px; text-align:center;">
         <p class="eyebrow" style="justify-content:center; display:flex;">Open to opportunities</p>
         <h2 class="mt-0">Looking for a Data Analyst or Power BI Developer</h2>
@@ -112,10 +126,12 @@
 </footer>
 
 <script src="js/projects-data.js"></script>
+<script src="js/blog-data.js"></script>
 <script src="js/main.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
   Portfolio.renderProjectGrid("featured-projects", { limit: 3, pathPrefix: "" });
+  Portfolio.renderPostGrid("featured-posts", { limit: 3, pathPrefix: "" });
 </script>
 </body>
 </html>

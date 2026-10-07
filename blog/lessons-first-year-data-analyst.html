@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Things I Wish I Knew Starting Out as a Data Analyst — Gulzhan Raiymbek</title>
+<meta name="description" content="From trusting a dataset too quickly to learning that a dashboard nobody opens isn't a finished project — lessons from my first year as a data analyst.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="../index.html"><span class="dot"></span> Gulzhan Raiymbek</a>
+    <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../certificates.html">Certificates</a>
+      <a href="../resume.html#contact" class="nav-cta">Contact</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="post-hero">
+    <div class="container" style="max-width: 72ch;">
+      <div class="card-tags">
+        <span class="tag topic-career"><span class="tag-dot"></span>Career Journey</span>
+      </div>
+      <h1>5 Things I Wish I Knew Starting Out as a Data Analyst</h1>
+      <p class="lead mt-0">From trusting a dataset too quickly to learning that a dashboard nobody
+        opens isn't a finished project — lessons from my first year doing this for real.</p>
+      <div class="post-meta">
+        <span>October 7, 2026</span><span class="dot-sep"></span><span>5 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="post-cover">
+        <img src="../assets/img/blog/lessons-first-year-cover.png" alt="Lessons from my first year as a data analyst"
+             onerror="this.parentElement.textContent='Cover image coming soon'">
+      </div>
+
+      <div class="post-body">
+        <p>Every one of these lessons cost me something — a little rework, a slightly awkward meeting,
+          or just time I didn't need to spend. None of them are complicated. All of them are things I
+          only really believed once I'd lived through them once.</p>
+
+        <h2>1. Trusting a dataset too quickly is the most expensive mistake you can make</h2>
+        <p>Coming from research, I thought I already had this instinct, and I mostly did — but
+          production business data breaks in different ways than lab data. A "customer ID" field with
+          duplicates that aren't really duplicates. A date column that's actually three different date
+          grains depending on which system wrote the row. The habit that's saved me the most time is
+          boring and non-negotiable: profile the data before you model it. Row counts, null rates, and
+          duplicate checks on your grain, every time, before a single DAX measure gets written.</p>
+
+        <h2>2. A dashboard nobody opens isn't a finished project</h2>
+        <p>I used to consider a dashboard "done" when it was technically correct and visually clean.
+          I don't anymore. If the person it was built for doesn't open it after week two, something
+          upstream went wrong — wrong grain, wrong cadence, or it just answers a question nobody
+          actually had. Now I ask what decision this dashboard is supposed to change before I build
+          anything, and I check back in with whoever asked for it before I consider it shipped, not
+          just when I hand it off.</p>
+
+        <h2>3. SQL fundamentals matter more than the flashiest DAX trick</h2>
+        <p>It's tempting to chase the clever DAX pattern — the one that collapses five measures into
+          one elegant one. What's actually paid off more consistently is being rock-solid on SQL: joins,
+          window functions, CTEs, and knowing when to push logic upstream into the data model instead of
+          downstream into a measure. A clean, well-indexed query that returns the right grain saves more
+          headaches than any DAX trick saves time.</p>
+
+        <h2>4. Document your data model like someone else has to maintain it — because eventually, they do</h2>
+        <p>Early on I kept model logic in my head: why this relationship is one-to-many, why that
+          measure uses CALCULATE with a specific filter removed, why there's a bridge table instead of a
+          direct relationship. The first time I had to hand a model off, or came back to my own work
+          after three months on something else, I understood why that's a bad habit. A short README or
+          even inline descriptions on measures pays for itself the very first time someone besides you
+          opens the file.</p>
+
+        <h2>5. Ask "what decision will this enable" before you open Power BI</h2>
+        <p>This is the one I'd tell myself on day one if I could. It's easy to jump straight to building
+          because building is the fun part. But the dashboards that actually got used were the ones
+          where I'd pinned down, in one sentence, what decision someone would make differently because
+          this existed. If I couldn't answer that before starting, the project usually needed more
+          conversation, not more charts.</p>
+
+        <p>None of these are things you can shortcut by reading about them — I certainly didn't, which
+          is a little bit the point. But if even one of them saves you a round of rework on your first
+          real project, that's the post doing its job.</p>
+      </div>
+
+      <div class="post-byline">
+        <div class="byline-avatar">GR</div>
+        <div>
+          <div class="byline-name">Gulzhan Raiymbek</div>
+          <div class="byline-role">Data Analyst · Power BI Developer</div>
+        </div>
+      </div>
+
+      <div class="post-nav">
+        <a href="pl-300-certification-journey.html">← Why I Got Microsoft Certified (PL-300)</a>
+        <a href="../blog.html">Back to all posts →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-note">© <span id="year"></span> Gulzhan Raiymbek. Built with Power BI, SQL, and a lot of DAX.</div>
+    <div class="footer-links">
+      <a href="mailto:graiymbek@gmail.com">Email</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/blog-data.js"></script>
+<script src="../js/projects-data.js"></script>
+<script src="../js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
