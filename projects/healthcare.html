@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healthcare Analytics Dashboard — Gulzhan Raiymbek</title>
+<title>Healthcare Analytics Dashboard | Gulzhan Raiymbek</title>
 <meta name="description" content="Power BI + SQL healthcare analytics case study: patient demographics, clinical activity, and revenue-cycle performance across 60,000+ patients.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -36,11 +36,12 @@
         <span class="tool-chip">SQL</span>
       </div>
       <h1>Healthcare Analytics Dashboard</h1>
-      <p class="lead">An operational and revenue-cycle dashboard for a hospital system — patient demographics,
+      <p class="lead">An operational and revenue-cycle dashboard for a hospital system: patient demographics,
         department workload, clinical activity, and claims performance across 60,000 patients and
         70,000 encounters, built across four report pages in Power BI.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/healthcare_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a>
+        <a class="btn btn-secondary" href="../assets/downloads/healthcare-dashboard.pbix" download>Download .pbix (28.4 MB) ↓</a>
       </div>
     </div>
   </section>
@@ -58,31 +59,31 @@
 
           <h2>Data model</h2>
           <p>Unlike the Supply Chain project, this data arrived already clean and relationally
-            structured, so no separate SQL schema-building layer was needed — nine source tables
+            structured, so no separate SQL schema-building layer was needed: nine source tables
             (<code>patients</code>, <code>providers</code>, <code>encounters</code>,
             <code>diagnoses</code>, <code>procedures</code>, <code>lab_tests</code>,
             <code>medications</code>, <code>claims_and_billing</code>, <code>denials</code>) were
             connected directly into the Power BI model. <code>encounters</code> sits at the
-            center — one row per patient visit — joined out to patients and providers by
+            center (one row per patient visit), joined out to patients and providers by
             <code>patient_id</code>/<code>provider_id</code>, and out to the clinical and
             financial detail tables by <code>encounter_id</code> / <code>claim_id</code>.</p>
 
           <h2>Key findings</h2>
           <ul class="insight-list">
-            <li><strong>Readmission rate holds at 15.7%</strong> across the full patient population —
+            <li><strong>Readmission rate holds at 15.7%</strong> across the full patient population,
               a consistent enough rate across departments that it reads as a system-wide discharge
               and follow-up issue rather than one department's problem.</li>
             <li><strong>The Emergency Department is by far the busiest</strong>, driving more
               encounter volume than any other department, with Obstetrics & Gynecology a distant
-              second — the two together account for a disproportionate share of total visits.</li>
+              second. The two together account for a disproportionate share of total visits.</li>
             <li><strong>Collection rate is nearly identical across every major insurance payer</strong>
-              (~64–65% for Aetna, BCBS, Humana, Medicare, Medicaid, UHC, and Cigna alike), which
+              (~64-65% for Aetna, BCBS, Humana, Medicare, Medicaid, UHC, and Cigna alike), which
               points to a systemic billing/collections gap rather than one difficult payer.</li>
             <li><strong>$40.1M of $112.9M billed is still outstanding</strong>, and the claims-appeal
-              success rate (80%) is trailing its own 90% target — meaning a meaningful slice of
+              success rate (80%) is trailing its own 90% target, meaning a meaningful slice of
               denied revenue isn't being recovered even after appeal.</li>
             <li><strong>Outpatient visits and chronic-condition management are the two costliest
-              procedure categories</strong> ($8.0M and $6.8M respectively) — not emergency or acute
+              procedure categories</strong> ($8.0M and $6.8M respectively), not emergency or acute
               procedures, which is worth a second look for cost-control purposes.</li>
           </ul>
         </div>
@@ -106,7 +107,8 @@
           </div>
           <div class="side-card">
             <h4>Links</h4>
-            <p style="margin-bottom:0;"><a class="card-link" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/healthcare_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a></p>
+            <p style="margin-bottom:6px;"><a class="card-link" href="https://github.com/graiymbek/graiymbek.github.io/blob/main/assets/sql/healthcare_queries.sql" target="_blank" rel="noopener">View SQL on GitHub ↗</a></p>
+            <p style="margin-bottom:0;"><a class="card-link" href="../assets/downloads/healthcare-dashboard.pbix" download>Download .pbix (28.4 MB) ↓</a></p>
           </div>
         </aside>
       </div>
@@ -116,26 +118,26 @@
   <section>
     <div class="container">
       <h2>From the Power BI report</h2>
-      <p>Built natively in Power BI Desktop with the DAX measures described above — four report pages,
+      <p>Built natively in Power BI Desktop with the DAX measures described above: four report pages,
         shown below.</p>
       <figure style="margin:24px 0 0;">
-        <img src="../assets/img/healthcare-executive-dashboard.png" alt="Executive Dashboard report page — hospital-wide patient, encounter, and readmission summary by department" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
-        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Executive Dashboard — hospital-wide patient, encounter, and readmission summary</figcaption>
+        <img src="../assets/img/healthcare-executive-dashboard.png" alt="Executive Dashboard report page: hospital-wide patient, encounter, and readmission summary by department" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Executive Dashboard: hospital-wide patient, encounter, and readmission summary</figcaption>
       </figure>
 
       <figure style="margin:24px 0 0;">
-        <img src="../assets/img/healthcare-patients-dashboard.png" alt="Patient Dashboard report page — patient demographics by age, gender, marital status, and ethnicity" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
-        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Patient Dashboard — demographics by age, gender, marital status, and ethnicity</figcaption>
+        <img src="../assets/img/healthcare-patients-dashboard.png" alt="Patient Dashboard report page: patient demographics by age, gender, marital status, and ethnicity" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Patient Dashboard: demographics by age, gender, marital status, and ethnicity</figcaption>
       </figure>
 
       <figure style="margin:24px 0 0;">
-        <img src="../assets/img/healthcare-revenue-cycle-dashboard.png" alt="Revenue Cycle Dashboard report page — billing, collections, denials, and appeal performance" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
-        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Revenue Cycle Dashboard — billing, collections, denials, and appeal performance</figcaption>
+        <img src="../assets/img/healthcare-revenue-cycle-dashboard.png" alt="Revenue Cycle Dashboard report page: billing, collections, denials, and appeal performance" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Revenue Cycle Dashboard: billing, collections, denials, and appeal performance</figcaption>
       </figure>
 
       <figure style="margin:24px 0 0;">
-        <img src="../assets/img/healthcare-clinical-analytics-dashboard.png" alt="Clinical Analytics Dashboard report page — diagnoses, procedure costs, and lab test activity" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
-        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Clinical Analytics Dashboard — diagnoses, procedure costs, and lab test activity</figcaption>
+        <img src="../assets/img/healthcare-clinical-analytics-dashboard.png" alt="Clinical Analytics Dashboard report page: diagnoses, procedure costs, and lab test activity" style="width:100%; border-radius:12px; border:1px solid var(--border); display:block;">
+        <figcaption style="margin-top:8px; font-size:13.5px; color:var(--text-muted);">Clinical Analytics Dashboard: diagnoses, procedure costs, and lab test activity</figcaption>
       </figure>
     </div>
   </section>

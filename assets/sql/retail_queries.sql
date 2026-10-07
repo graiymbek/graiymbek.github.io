@@ -1,10 +1,10 @@
 -- ============================================================
--- Retail Sales Analytics — SQL
+-- Retail Sales Analytics: SQL
 -- SQL Server (T-SQL).
 --
 -- This dashboard was originally built a few years ago while
--- working through a Power BI course (Maven Analytics, via Udemy)
--- — the source data's exact origin isn't known, so as with
+-- working through a Power BI course (Maven Analytics, via Udemy).
+-- The source data's exact origin isn't known, so as with
 -- Healthcare there's no "PART 1: build the star schema" section;
 -- these are analytical queries written directly against the real
 -- source tables, mirroring the DAX measures used across the
@@ -16,20 +16,20 @@
 -- Categories Lookup, Territory Lookup, Calendar Lookup.
 --
 -- A few tables in the model are course-demo scaffolding rather
--- than real analytical data — "Customer Metric Selection",
+-- than real analytical data: "Customer Metric Selection",
 -- "Product Metric Selection", "Price Adjustment(%)", and
 -- "Product Category Sales (Unpivot Demo)" are Power BI teaching
 -- features (dynamic metric switching, What-if parameters, an
 -- unpivot example) and are intentionally left out of the SQL below.
 --
 -- Note: the fact table (Sales Data) doesn't carry a revenue amount
--- directly — the DAX measure is literally named
+-- directly. The DAX measure is literally named
 -- "Total Revenue using_sumx", i.e. computed row-by-row as
 -- OrderQuantity × ProductPrice. The SQL below mirrors that with a
 -- join to Product Lookup + SUM, which is the set-based equivalent.
 --
 -- "Revenue Target" / "order target" / "profit target" aren't
--- included — there's no separate targets table in this model, so
+-- included. There's no separate targets table in this model, so
 -- those look like fixed values configured directly in Power BI
 -- (or driven by the What-if parameter above) rather than something
 -- derived from the transactional data.
@@ -210,7 +210,7 @@ ORDER BY Total_Revenue DESC;
 GO
 
 -- Revenue by annual income band (banding done in SQL since the real
--- AnnualIncome column is numeric — Power BI's "Income level" is a
+-- AnnualIncome column is numeric: Power BI's "Income level" is a
 -- calculated column bucketing this the same way, exact cutoffs unknown)
 SELECT
     CASE

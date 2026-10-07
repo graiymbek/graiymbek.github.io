@@ -1,9 +1,9 @@
 -- ============================================================
--- Supply Chain Analytics — SQL
+-- Supply Chain Analytics: SQL
 -- SQL Server (T-SQL). Two parts:
---   PART 1: Data model — star schema views built on the raw
+--   PART 1: Data model, built as star schema views on the raw
 --           staging table (stg_supply_chain), loaded into Power BI.
---   PART 2: Analytical queries — mirror the DAX measures used in
+--   PART 2: Analytical queries that mirror the DAX measures used in
 --           the Power BI report, written against the views below.
 -- ============================================================
 

@@ -1,12 +1,12 @@
 -- ============================================================
--- Healthcare Operations & Revenue Cycle Analytics — SQL
+-- Healthcare Operations & Revenue Cycle Analytics: SQL
 -- SQL Server (T-SQL).
 --
 -- Unlike the Supply Chain project, this dataset arrived already
 -- clean and relationally structured (9 tables, real keys, no
 -- staging/dimensional-modeling step was needed) and was connected
 -- to Power BI directly. So there's no "PART 1: build the star
--- schema" section here — these are analytical queries written
+-- schema" section here. These are analytical queries written
 -- directly against the real source tables, mirroring the DAX
 -- measures used across the four report pages (Executive,
 -- Patients, Financial, Clinical Analytics).
@@ -16,7 +16,7 @@
 --
 -- A few measures (Admitted Patients, Emergency Visits, Appeal
 -- Success Rate) are written from the most reasonable reading of
--- the column values available — flagged inline with a comment —
+-- the column values available (flagged inline with a comment)
 -- since the exact DAX formula text isn't something I can pull
 -- out of the .pbix file directly. Easy to tweak once you confirm
 -- the exact category values used in Power BI.
@@ -77,8 +77,8 @@ SELECT
     (SELECT COUNT(DISTINCT patient_id) FROM patients WHERE gender = 'Male')    AS Male_Patients,
     (SELECT AVG(CAST(age AS FLOAT)) FROM patients)                             AS Average_Age,
     -- "Admitted Patients": distinct patients with an inpatient encounter.
-    -- Assumes admission_type is populated only for inpatient admissions —
-    -- swap the WHERE clause if Power BI defines it differently (e.g. status = 'Admitted').
+    -- Assumes admission_type is populated only for inpatient admissions.
+    -- Swap the WHERE clause if Power BI defines it differently (e.g. status = 'Admitted').
     (SELECT COUNT(DISTINCT patient_id) FROM encounters
         WHERE admission_type IS NOT NULL)                                      AS Admitted_Patients;
 GO
@@ -193,7 +193,7 @@ GO
 
 -- Appeal success rate: share of filed appeals with a successful outcome.
 -- Assumes final_outcome holds a value like 'Overturned' / 'Approved' for
--- successful appeals — adjust the WHEN clause to match the real values.
+-- successful appeals. Adjust the WHEN clause to match the real values.
 SELECT
     SUM(CASE WHEN appeal_filed = 1 AND final_outcome IN ('Overturned', 'Approved') THEN 1.0 ELSE 0 END)
         * 100.0 / NULLIF(SUM(CASE WHEN appeal_filed = 1 THEN 1 ELSE 0 END), 0) AS Appeal_Success_Rate_Pct

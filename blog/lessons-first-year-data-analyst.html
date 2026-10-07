@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 Things I Wish I Knew Starting Out as a Data Analyst — Gulzhan Raiymbek</title>
-<meta name="description" content="From trusting a dataset too quickly to learning that a dashboard nobody opens isn't a finished project — lessons from my first year as a data analyst.">
+<title>5 Things I Wish I Knew Starting Out as a Data Analyst | Gulzhan Raiymbek</title>
+<meta name="description" content="From trusting a dataset too quickly to learning that a dashboard nobody opens isn't a finished project: lessons from my first year as a data analyst.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
       </div>
       <h1>5 Things I Wish I Knew Starting Out as a Data Analyst</h1>
       <p class="lead mt-0">From trusting a dataset too quickly to learning that a dashboard nobody
-        opens isn't a finished project — lessons from my first year doing this for real.</p>
+        opens isn't a finished project: lessons from my first year doing this for real.</p>
       <div class="post-meta">
         <span>October 7, 2026</span><span class="dot-sep"></span><span>5 min read</span>
       </div>
@@ -49,12 +49,12 @@
       </div>
 
       <div class="post-body">
-        <p>Every one of these lessons cost me something — a little rework, a slightly awkward meeting,
+        <p>Every one of these lessons cost me something: a little rework, a slightly awkward meeting,
           or just time I didn't need to spend. None of them are complicated. All of them are things I
           only really believed once I'd lived through them once.</p>
 
         <h2>1. Trusting a dataset too quickly is the most expensive mistake you can make</h2>
-        <p>Coming from research, I thought I already had this instinct, and I mostly did — but
+        <p>Coming from research, I thought I already had this instinct, and I mostly did, but
           production business data breaks in different ways than lab data. A "customer ID" field with
           duplicates that aren't really duplicates. A date column that's actually three different date
           grains depending on which system wrote the row. The habit that's saved me the most time is
@@ -64,19 +64,19 @@
         <h2>2. A dashboard nobody opens isn't a finished project</h2>
         <p>I used to consider a dashboard "done" when it was technically correct and visually clean.
           I don't anymore. If the person it was built for doesn't open it after week two, something
-          upstream went wrong — wrong grain, wrong cadence, or it just answers a question nobody
+          upstream went wrong: wrong grain, wrong cadence, or it just answers a question nobody
           actually had. Now I ask what decision this dashboard is supposed to change before I build
           anything, and I check back in with whoever asked for it before I consider it shipped, not
           just when I hand it off.</p>
 
         <h2>3. SQL fundamentals matter more than the flashiest DAX trick</h2>
-        <p>It's tempting to chase the clever DAX pattern — the one that collapses five measures into
+        <p>It's tempting to chase the clever DAX pattern: the one that collapses five measures into
           one elegant one. What's actually paid off more consistently is being rock-solid on SQL: joins,
           window functions, CTEs, and knowing when to push logic upstream into the data model instead of
           downstream into a measure. A clean, well-indexed query that returns the right grain saves more
           headaches than any DAX trick saves time.</p>
 
-        <h2>4. Document your data model like someone else has to maintain it — because eventually, they do</h2>
+        <h2>4. Document your data model like someone else has to maintain it, because eventually, they do</h2>
         <p>Early on I kept model logic in my head: why this relationship is one-to-many, why that
           measure uses CALCULATE with a specific filter removed, why there's a bridge table instead of a
           direct relationship. The first time I had to hand a model off, or came back to my own work
@@ -91,7 +91,7 @@
           this existed. If I couldn't answer that before starting, the project usually needed more
           conversation, not more charts.</p>
 
-        <p>None of these are things you can shortcut by reading about them — I certainly didn't, which
+        <p>None of these are things you can shortcut by reading about them. I certainly didn't, which
           is a little bit the point. But if even one of them saves you a round of rework on your first
           real project, that's the post doing its job.</p>
       </div>

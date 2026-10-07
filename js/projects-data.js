@@ -1,5 +1,5 @@
 /* ============================================================
-   Central project list — this is the ONLY file you need to touch
+   Central project list. This is the ONLY file you need to touch
    to add a new dashboard to the site. Every grid (Home "featured"
    and the full Projects page) renders from this array.
 
@@ -19,7 +19,7 @@ const PROJECTS = [
     title: "Supply Chain Analytics",
     domain: "supply-chain",
     domainLabel: "Supply Chain",
-    summary: "End-to-end order & fulfillment analysis on 180K+ orders — sales trends, shipping performance, and late-delivery risk by mode.",
+    summary: "End-to-end order & fulfillment analysis on 180K+ orders: sales trends, shipping performance, and late-delivery risk by mode.",
     tools: ["Power BI", "DAX", "SQL", "Python"],
     thumb: "../assets/img/supply-chain-thumb.png",
     thumbFromRoot: "assets/img/supply-chain-thumb.png",
@@ -58,7 +58,7 @@ const PROJECTS = [
     title: "HR Analytics Dashboard",
     domain: "hr",
     domainLabel: "HR",
-    summary: "Workforce analytics dashboard covering headcount, turnover, and hiring metrics — currently in progress.",
+    summary: "Workforce analytics dashboard covering headcount, turnover, and hiring metrics. Currently in progress.",
     tools: ["Power BI", "DAX", "SQL"],
     thumb: "../assets/img/hr-thumb.png",
     thumbFromRoot: "assets/img/hr-thumb.png",
@@ -71,7 +71,7 @@ const PROJECTS = [
     title: "Insurance Claims Analytics",
     domain: "insurance",
     domainLabel: "Insurance",
-    summary: "Claims and policy performance analytics dashboard — currently in progress.",
+    summary: "Claims and policy performance analytics dashboard. Currently in progress.",
     tools: ["Power BI", "DAX", "SQL"],
     thumb: "../assets/img/insurance-thumb.png",
     thumbFromRoot: "assets/img/insurance-thumb.png",
